@@ -6,6 +6,7 @@ import { IoIosTime } from "react-icons/io";
 import { IoIosArrowDown } from "react-icons/io";
 import CloudAccountRiskAssessmentChart from './Components/CloudAccountRiskAssessmentChart';
 import CloudAccountStatusChart from './Components/CloudAccountStatusChart';
+import CWPPDashboard from './Components/CWPP-dashboard/CWPPDashboard';
 
 function App() {
   return (
@@ -32,7 +33,9 @@ function App() {
       </div>
 
     <div>
-    <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+   <div>
+    <h1 className='font-semibold text-left mb-2'>CSPM Executive Dashboard</h1>
+   <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
         <div className=' border'>
         <CloudAccountStatusChart className="" />
         </div>
@@ -45,6 +48,11 @@ function App() {
           </button>
         </div>
       </div>
+   </div>
+   <div className='mt-5'>
+    <h1 className='text-left font-semibold'>CWPP Dashboard</h1>
+    <CWPPDashboard></CWPPDashboard>
+   </div>
     </div>
     </>
   )

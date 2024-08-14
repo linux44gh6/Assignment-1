@@ -1,16 +1,22 @@
 
 import { Doughnut } from 'react-chartjs-2';
 import { Chart as ChartJS, ArcElement, Tooltip, Legend } from 'chart.js';
+import FetchData from '../customHooks/FetchData';
 
 ChartJS.register(ArcElement, Tooltip, Legend);
 
 const CloudAccountStatusDoughnutChart = () => {
+  const {cloudData,loading}=FetchData()
+  if(loading){
+    return <h1>Loading......</h1>
+  }
+  console.log(cloudData);
+  const {connected,notConnected}=cloudData.cloudAccountStatus
   const data = {
-   
     datasets: [
       {
         label: 'Cloud Account Status',
-        data: [70, 30], 
+        data: [connected, notConnected], 
         backgroundColor: [
           'rgba(54, 162, 235, 0.2)',
           'rgba(255, 99, 132, 0.2)', 
@@ -25,14 +31,14 @@ const CloudAccountStatusDoughnutChart = () => {
   };
 
   const labels = [
-    { text: 'Connected', color: 'rgba(54, 162, 235, 1)' },
-    { text: 'Not Connected', color: 'rgba(255, 99, 132, 1)' },
+    { text: `Connected(${connected})`, color: 'rgba(54, 162, 235, 1)' },
+    { text: `Not Connected(${notConnected})`, color: 'rgba(255, 99, 132, 1)' },
   ];
 
   return (
     <div className="bg-white p-4 rounded-lg shadow-md w-full flex">
-      <div className="w-full">
-        <h3 className="text-lg font-semibold mb-4">Cloud Account Status</h3>
+      <div className="w-2/3">
+        <h3 className=" font-semibold mb-4">Cloud Account Status</h3>
         <Doughnut data={data} />
       </div>
       <div className="w-1/3 flex flex-col justify-center">
