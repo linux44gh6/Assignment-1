@@ -42,10 +42,10 @@ const CloudAccountRiskAssessmentDoughnutChart = () => {
   };
 
   const labels = [
-    { text: `Failed(${failed})`, color: 'rgba(255, 99, 132, 1)' },
-    { text: `Warning(${warning})`, color: 'rgba(255, 206, 86, 1)' },
-    { text: `Not Available(${notAvailable})`, color: 'rgba(201, 203, 207, 1)' },
-    { text: `Passed(${passed})`, color: 'rgba(75, 192, 192, 1)' },
+    { text: `Failed(${failed})`, color: 'red' },
+    { text: `Warning(${warning})`, color: 'yellow' },
+    { text: `Not Available(${notAvailable})`, color: 'gray)' },
+    { text: `Passed(${passed})`, color: 'green' },
   ];
 
   return (
