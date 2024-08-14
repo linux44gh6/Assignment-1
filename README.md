@@ -1,8 +1,9 @@
-# React + Vite
+This is a dashboard page.
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+To Run this dashboard follow this instruction--
 
-Currently, two official plugins are available:
+i)Clone this file into your local computer.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+ii) Run this commant into your Vs terminal- npm i
+
+ii) TO start the project run this command- npm run dev
