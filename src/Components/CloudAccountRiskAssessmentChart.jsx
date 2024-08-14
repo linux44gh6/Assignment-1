@@ -9,11 +9,16 @@ ChartJS.register(ArcElement, Tooltip, Legend);
 
 const CloudAccountRiskAssessmentDoughnutChart = () => {
   const {cloudData,loading}=FetchData()
+ 
+  let riskAssessment = null;
+  if (!loading && cloudData && cloudData.CSPM && cloudData.CSPM[1]) {
+    riskAssessment = cloudData.CSPM[1].riskAssessment;
+  } 
   if(loading){
     return <h1>Loading........</h1>
   }
+  const {failed,warning,notAvailable,passed}=riskAssessment
   
-  const {failed,warning,notAvailable,passed}=cloudData.riskAssessment
   const data = {
     datasets: [
       {

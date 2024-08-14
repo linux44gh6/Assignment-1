@@ -7,11 +7,15 @@ ChartJS.register(ArcElement, Tooltip, Legend);
 
 const CloudAccountStatusDoughnutChart = () => {
   const {cloudData,loading}=FetchData()
+  let cloudAccountStatus = null;
+  if (!loading && cloudData && cloudData.CSPM && cloudData.CSPM[0]) {
+     cloudAccountStatus = cloudData.CSPM[0].cloudAccountStatus;
+  } 
   if(loading){
     return <h1>Loading......</h1>
   }
-  console.log(cloudData);
-  const {connected,notConnected}=cloudData.cloudAccountStatus
+ 
+  const {connected,notConnected}=cloudAccountStatus
   const data = {
     datasets: [
       {

@@ -1,12 +1,19 @@
 {
-  "cloudAccountStatus": {
-    "connected": 70,
-    "notConnected": 30
-  },
-  "riskAssessment": {
-    "failed": 15,
-    "warning": 20,
-    "notAvailable": 10,
-    "passed": 55
-  }
+  "CSPM": [
+    {
+      "cloudAccountStatus": {
+        "connected": 70,
+        "notConnected": 30
+      }
+    },
+    {
+      "riskAssessment": {
+        "failed": 15,
+        "warning": 20,
+        "notAvailable": 10,
+        "passed": 55
+      }
+    }
+  ]
+  
 }
