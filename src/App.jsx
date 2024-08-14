@@ -53,6 +53,8 @@ function App() {
     <h1 className='text-left font-semibold'>CWPP Dashboard</h1>
     <CWPPDashboard></CWPPDashboard>
    </div>
+
+   
     </div>
     </>
   )

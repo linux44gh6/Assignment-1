@@ -1,3 +1,4 @@
+import { TbChartBarOff } from "react-icons/tb";
 
 const CWPPDashboard = () => {
   return (
@@ -9,7 +10,9 @@ const CWPPDashboard = () => {
      <div className=" h-[300px] rounded-lg shadow-md flex items-center justify-center">
        
        <div className="text-center">
-       
+       <div className="w-4 mx-auto -translate-y-7">
+       <TbChartBarOff className="text-5xl text-gray-400 "></TbChartBarOff>
+       </div>
          <p className="text-gray-500">No graph data available</p>
        </div>
      </div>
@@ -20,7 +23,9 @@ const CWPPDashboard = () => {
      <div className=" h-[300px] rounded-lg shadow-md flex items-center justify-center">
        
        <div className="text-center">
-       
+       <div className="w-4 mx-auto -translate-y-7">
+       <TbChartBarOff className="text-5xl text-gray-400 "></TbChartBarOff>
+       </div>
          <p className="text-gray-500">No graph data available</p>
        </div>
      </div>
