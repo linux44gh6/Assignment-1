@@ -8,7 +8,8 @@ import CloudAccountRiskAssessmentChart from './Components/CloudAccountRiskAssess
 import CloudAccountStatusChart from './Components/CloudAccountStatusChart';
 import CWPPDashboard from './Components/CWPP-dashboard/CWPPDashboard';
 import { useState } from 'react';
-
+import { Tab, Tabs, TabList, TabPanel } from 'react-tabs';
+import 'react-tabs/style/react-tabs.css';
 function App() {
   const [isAsideVisible, setAsideVisible] = useState(false);
   const handleToRef=()=>{
@@ -17,7 +18,7 @@ function App() {
   const toogleAside=()=>{
     setAsideVisible(!isAsideVisible);
   }
-  console.log(isAsideVisible);
+ 
   return (
     <>
     <div className="navbar bg-base-100">
@@ -91,7 +92,7 @@ function App() {
    
     {isAsideVisible && (
       <div className="absolute top-0 right-0 w-1/2 h-full bg-slate-200 shadow-lg z-50 p-4">
-       <div className=' bg-blue-600 px-4 py-2'>
+       <div className=' bg-blue-800 px-4 py-2'>
        <button
           onClick={toogleAside}
           className="absolute top-5  right-8 text-white text-3xl"
@@ -100,7 +101,52 @@ function App() {
         </button>
         <h2 className="text-xl text-left text-white mb-4">Add Widget</h2>
        </div>
-        
+        <div>
+        <Tabs>
+    <TabList>
+      <Tab>CSPM</Tab>
+      <Tab>CWPP</Tab>
+      <Tab>Image</Tab>
+      <Tab>Ticket</Tab>
+    </TabList>
+
+    <TabPanel>
+   <div className=' space-y-3 '>
+   <div className=' border border-slate-300 rounded-md'>
+   <div className="form-control w-36">
+  <label className="label cursor-pointer">
+    <input type="checkbox" defaultChecked className=" text-5xl" />
+    <span className="label-text text-blue-800 font-semibold">Cloud Accounts</span>
+  </label>
+</div>
+   </div>
+   <div className=' border border-slate-300 rounded-md'>
+   <div className="form-control w-60">
+  <label className="label cursor-pointer">
+    <input type="checkbox" defaultChecked className="checkbox-blue-800" />
+    <span className="label-text text-blue-800 font-semibold">Cloud Account Risk Assessment</span>
+  </label>
+</div>
+   </div>
+   </div>
+    </TabPanel>
+    <TabPanel>
+      <h2>Not Available</h2>
+    </TabPanel>
+    <TabPanel>
+      <h2>Not Available</h2>
+    </TabPanel>
+    <TabPanel>
+      <h2>Not Available</h2>
+    </TabPanel>
+  </Tabs>
+        </div>
+       <div className=''>
+        <div className='flex gap-2 w-20 mx-auto mt-[50%] me-[20%]'>
+          <button className='btn border border-blue-800 text-blue-800'>Cancel</button>
+          <button className='btn border border-blue-800 bg-blue-800 text-white'>Confirm</button>
+        </div>
+       </div>
       </div>
     )}
 
@@ -109,7 +155,7 @@ function App() {
       <div
         onClick={toogleAside}
         className="fixed inset-0 bg-black opacity-50 z-40"
-      />
+      ></div>
     )}
   </>
   )
